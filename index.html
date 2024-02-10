@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Suhu</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script language="javascript" src="./js/script.js"></script>
+</head>
+<body>
+    <div class="kotak">
+        <form id="form1" class="active">
+            <label for="celsius">Masukkan Suhu °C :</label>
+            <input type="text" id="celsius" name="celsius" placeholder="Contoh: 90°C" required>
+            <label for="kalkulasi">Cara Kalkulasi</label>
+            <input type="text" id="kalkulasi" name="kalkulasi" placeholder="90°C * (9/5) + 32 = 194°F" disabled><br>
+            <button type="button" onclick="konversi()">Konversi</button>
+            <button type="button" onclick="reset()">Reset</button>
+            <button type="button" onclick="reverse()">Reverse</button>
+        </form>
+        
+        <form id="form2">
+            <label for="fahrenheit">Masukkan Suhu °F :</label>
+            <input type="text" id="fahrenheit" name="fahrenheit" placeholder="Contoh: 194°F" required>
+            <label for="kalkulasi">Cara Kalkulasi</label>
+            <input type="text" id="kalkulasi" name="kalkulasi" placeholder="194°F - 32 * (5/9) = 90°C" disabled><br>
+            <button type="button" onclick="konversi2()">Konversi</button>
+            <button type="button" onclick="reset()">Reset</button>
+            <button type="button" onclick="reverse()">Reverse</button>
+        </form>
+               
+        <div class="note">
+            <h1 id="conversion-title">Cara Conversi Dari Celcius(°C) Ke Fahrenheit(°F)</h1>
+            <p id="conversion-text">
+                Suhu <span class="superscript">S</span> dalam derajat Fahrenheit (°F)sama dengan suhu <span class="superscript">S</span> dalam derajat Celcius (°C) kali 9/5 tambah 32
+                <br><br>
+                S<span class="subscript">(°F)</span> = (S<span class="subscript">(°S)</span> x 9/5) + 32
+                <br><br>
+                atau
+                <br><br>
+                S<span class="subscript">(°F)</span> = (S<span class="subscript">(°S)</span> x 1.8) + 32
+            </p>
+        </div>
+    </div>
+    <div id="result"></div>
+</body>
+</html>
