@@ -9,6 +9,10 @@ body {
     height: 100vh;
 }
 
+form h1 {
+    text-align: center;
+}
+
 .kotak{
     background-color: #fff;
     padding: 20px;
@@ -22,7 +26,7 @@ form {
     margin-bottom: 20px;
 }
 
-form.active {
+form.form {
     display: block;
 }
 
@@ -62,17 +66,31 @@ button:hover {
     font-size: 18px;
     margin-top: 20px;
 }
+
 .note {
-    margin-top: 20px;
+    margin-top: 45px;
+    display: block;
 }
-.note h1 {
+
+.lebar {
+    width: 97%;
+}
+
+.conversion-title {
     font-size: 14px;
 }
+
+.conversion-text {
+    font-size: 16px;
+}
+
 .superscript {
     font-size: larger;
     font-style: italic;
 }
+
 .subscript {
     vertical-align: sub;
     font-size: smaller;
 }
+

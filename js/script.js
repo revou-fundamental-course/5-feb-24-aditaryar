@@ -1,25 +1,25 @@
-function konversi() {
-    let celsiusValue = parseFloat(document.getElementById("celsius").value);
-    let fahrenheitValue = (celsiusValue * 9/5) + 32;
+function konversi(type) {
+    let inputValue;
+    let resultValue;
+    let placeholder;
+    const inputElement = document.getElementById('kalkulasi');
 
-    document.getElementById("fahrenheit").value = formatTemperature(fahrenheitValue);
+    if (type === 'Celsius') {
+        inputValue = parseFloat(document.getElementById("celsius").value);
+        resultValue = (inputValue * 9/5) + 32;
+        document.getElementById("fahrenheit").value = formatTemperature(resultValue);
+        displayResult(resultValue, 'F');
+        placeholder = `${inputValue}°C * (9/5) + 32 = ${resultValue}°F`;
+    } else if (type === 'Fahrenheit') {
+        inputValue = parseFloat(document.getElementById("fahrenheit").value);
+        resultValue = (inputValue - 32) * 5/9;
+        document.getElementById("celsius").value = formatTemperature(resultValue);
+        displayResult(resultValue, 'C');
+        placeholder = `${inputValue}°F - 32 * (5/9) = ${resultValue}°C`;
+    }
 
-    displayResult(fahrenheitValue, 'F');
-}
-
-function konversi2() {
-    let fahrenheitValue = parseFloat(document.getElementById("fahrenheit").value);
-    let celsiusValue = (fahrenheitValue - 32) * 5/9;
-
-    document.getElementById("celsius").value = formatTemperature(celsiusValue);
-
-    displayResult(celsiusValue, 'C');
-}
-
-function reset() {
-    document.getElementById("celsius").value = "";
-    document.getElementById("fahrenheit").value = "";
-    document.getElementById("result").innerHTML = "";
+    // Set the placeholder for the disabled input field
+    inputElement.setAttribute('placeholder', placeholder);
 }
 
 function displayResult(result, type) {
@@ -35,6 +35,12 @@ function reverse() {
     let form1 = document.getElementById('form1');
     let form2 = document.getElementById('form2');
 
-    form1.classList.toggle('active');
-    form2.classList.toggle('active');
+    let note1 = document.getElementById('note1');
+    let note2 = document.getElementById('note2');
+
+    form1.classList.toggle('form');
+    form2.classList.toggle('form');
+
+    note1.classList.toggle('note');
+    note2.classList.toggle('note');
 }
